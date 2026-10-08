@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AnimationPlaneOne
+      name: AnimationPlane
       rect:
         serializedVersion: 2
         x: 0
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AnimationPlaneOne: 3665601655925036642
+      AnimationPlane: 3665601655925036642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
