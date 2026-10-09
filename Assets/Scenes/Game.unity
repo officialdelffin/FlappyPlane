@@ -353,6 +353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlaneControler
   planeRigidyBory: {fileID: 1332255244}
+  speedJump: 0
 --- !u!1 &1813202813
 GameObject:
   m_ObjectHideFlags: 0
