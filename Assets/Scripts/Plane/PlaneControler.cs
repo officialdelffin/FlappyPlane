@@ -7,6 +7,8 @@ public class PlaneControler : MonoBehaviour
 
 
     // Attributes :
+    private Vector3 startPosition;
+    private float boundaryY;
     [SerializeField] private Rigidbody2D planeRigidyBory;
     [SerializeField] private float upwardForce;
 
@@ -17,9 +19,18 @@ public class PlaneControler : MonoBehaviour
     {
 
 
-        
+        startPosition.x = -6;
+        startPosition.y = 0;
+        startPosition.z = 0;
 
-        
+
+        boundaryY = -4.5f;
+
+
+        transform.position = startPosition;
+
+
+
     }
 
 
@@ -28,13 +39,26 @@ public class PlaneControler : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Space)){
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
         
         
             planeRigidyBory.linearVelocity = Vector2.up * upwardForce;
 
 
         }
+
+
+        if (transform.position.y <= boundaryY)
+        {
+
+
+            transform.position = new Vector3(transform.position.x, boundaryY, transform.position.z);
+
+
+
+        } 
+       
 
         
     }
