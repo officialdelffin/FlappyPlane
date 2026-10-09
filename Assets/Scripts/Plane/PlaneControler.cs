@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -19,14 +20,17 @@ public class PlaneControler : MonoBehaviour
     {
 
 
+        // Initialize the starting position of the plane
         startPosition.x = -6;
         startPosition.y = 0;
         startPosition.z = 0;
 
 
+        // Define the lower boundary
         boundaryY = -4.5f;
 
 
+        // Set the plane's position to the starting position
         transform.position = startPosition;
 
 
@@ -38,30 +42,40 @@ public class PlaneControler : MonoBehaviour
     void Update()
     {
 
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-        
-        
-            planeRigidyBory.linearVelocity = Vector2.up * upwardForce;
+        // Check if the space key is pressed to trigger upward movement
+        if (Input.GetKeyDown(KeyCode.Space)) { upwardMovement(); }
 
 
-        }
-
-
-        if (transform.position.y <= boundaryY)
-        {
-
-
-            transform.position = new Vector3(transform.position.x, boundaryY, transform.position.z);
-
-
-
-        } 
+        // Check if the plane has reached the lower boundary and adjust its position if necessary
+        if (transform.position.y <= boundaryY) { definedLimitGround(); }
        
 
-        
     }
 
 
+    // Method to apply upward movement to the plane
+    private void upwardMovement()
+    {
+         
+
+        planeRigidyBory.linearVelocity = Vector2.up * upwardForce;
+
+
+    }
+
+
+    // Method to define the lower boundary for the plane's position
+    private void definedLimitGround() 
+    {
+
+
+        transform.position = new Vector3(transform.position.x, boundaryY, transform.position.z);
+
+
+    }
+ 
+
 }
+
+
+
