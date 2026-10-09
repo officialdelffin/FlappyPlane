@@ -8,6 +8,8 @@ public class PlaneControler : MonoBehaviour
 
     // Attributes :
     [SerializeField] private Rigidbody2D planeRigidyBory;
+    [SerializeField] private float upwardForce;
+
 
 
     // Start is called once before the first execution of Update after the PlaneControler is created
@@ -15,7 +17,7 @@ public class PlaneControler : MonoBehaviour
     {
 
 
-
+        
 
         
     }
@@ -26,7 +28,13 @@ public class PlaneControler : MonoBehaviour
     {
 
 
+        if (Input.GetKeyDown(KeyCode.Space)){
+        
+        
+            planeRigidyBory.linearVelocity = Vector2.up * upwardForce;
 
+
+        }
 
         
     }
